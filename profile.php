@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <link   href="css/bootstrap.min.css" rel="stylesheet">
   <style>
   h1 {
       position: absolute;
@@ -16,6 +16,11 @@ session_start();
       position: absolute;
       left: 550px;
       top: 310px;
+  }
+  h4 {
+      position: absolute;
+      left: 800px;
+      top: 317px;
   }
   h3 {
       position: absolute;
@@ -57,9 +62,12 @@ session_start();
     			echo'Password:<br>';
     			echo'<input type="password" name="password" id="pass" value='.htmlspecialchars($myrow["password"]).'><br>';
     			echo'<h3><input type="submit" value="Save"></h3>';
-          echo '<h1><img src="img/photo.png" alt="Photo" width="400" height="300"></h1>';
           echo'</form>';
-          echo '<h2><button> Change photo</button></a> </h2>';
+          echo '<form method="POST" action="getphoto.php?id='.$myrow["id"].'" enctype="multipart/form-data">';
+          echo '<h2><input type="file" name="myimage"></h2>';
+          echo '<h4><input type="submit" name="submit_image" value="Upload"></h4>';
+          echo '</form>';
+          echo '<h1><img src= "fetch_photo.php?id='.$myrow["id"]. '"width="400" height="250"></h1>';
     			echo'<br>';
         }
         else{
@@ -80,9 +88,12 @@ session_start();
     			echo'Password:<br>';
     			echo'<input type="password" name="password" id="pass" value='.htmlspecialchars($myrow["password"]).'><br>';
     			echo'<h3><input type="submit" value="Save"></h3>';
-          echo '<h1><img src="img/photo.png" alt="Photo" width="400" height="300"></h1>';
           echo'</form>';
-          echo '<h2><button> Change photo</button></a> </h2>';
+          echo '<form method="POST" action="getphoto.php?id='.$myrow["id"].'" enctype="multipart/form-data">';
+          echo '<h2><input type="file" name="myimage"></h2>';
+          echo '<h4><input type="submit" name="submit_image" value="Upload"></h4>';
+          echo '</form>';
+          echo '<h1><img src= "fetch_photo.php?id='.$myrow["id"]. '"width="400" height="250"></h1>';
     			echo'<br>';
         }
   		}
@@ -105,9 +116,12 @@ session_start();
     			echo'Password:<br>';
     			echo'<input type="password" name="password" id="pass" value='.htmlspecialchars($myrow["password"]).'><br>';
   			  echo'<h3><input type="submit" value="Save"></h3>';
-          echo '<h1><img src="img/photo.png" alt="Photo" width="400" height="300"></h1>';
           echo'</form>';
-          echo '<h2><button> Change photo</button></a> </h2>';
+          echo '<form method="POST" action="getphoto.php?id='.$myrow["id"].'" enctype="multipart/form-data">';
+          echo '<h2><input type="file" name="myimage"></h2>';
+          echo '<h4><input type="submit" name="submit_image" value="Upload"></h4>';
+          echo '</form>';
+          echo '<h1><img src= "fetch_photo.php?id='.$myrow["id"]. '"width="400" height="250"></h1>';
     			echo'<br>';
         }
         else{
@@ -123,7 +137,7 @@ session_start();
   			echo'Surname:<br>';
   			echo $myrow["lname"].'<br>';
   			echo '<br>';
-        echo '<h1><img src="img/photo.png" alt="Photo" width="400" height="300"></h1>';
+        echo '<h1><img src= "fetch_photo.php?id='.$myrow["id"]. '"width="400" height="250"></h1>';
       }
   		}
   	}
